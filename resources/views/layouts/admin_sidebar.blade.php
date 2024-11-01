@@ -43,9 +43,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="jumlah_laboratorium" class="nav-link {{ request()->is('jumlah_laboratorium') ? 'active' : '' }}">
+                <a href="jurnal_laboratorium" class="nav-link {{ request()->is('jurnal_laboratorium') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-warehouse"></i>
-                    <p>Jumlah Laboratorium</p>
+                    <p>Jurnal Laboratorium</p>
                 </a>
             </li>
             <li class="nav-item">
