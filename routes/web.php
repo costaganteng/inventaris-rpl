@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PerbaikanController;
 use App\Http\Controllers\StokBahanController;
 use App\Http\Controllers\InventarisController;
@@ -31,3 +32,21 @@ Route::resource('kerusakan_alat', KerusakanAlatController::class);
 Route::resource('pengembalian', PengembalianController::class);
 Route::resource('stok_bahan', StokBahanController::class);
 Route::resource('jurnal_laboratorium', JurnalLaboratoriumController::class);
+
+//login register
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('auth')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::middleware('role:admin')->group(function () {
+        Route::get('/admin-dashboard', function () {
+            return view('admin.dashboard');
+        });
+    });
+    Route::middleware('role:operator')->group(function () {
+        Route::get('/operator-dashboard', function () {
+            return view('operator.dashboard');
+        });
+    });
+});
+
