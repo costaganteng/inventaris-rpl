@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Daftar Laboratorium</h1>
-    <a href="{{ route('jumlah_laboratorium.create') }}" class="btn btn-primary">Tambah Data</a>
+    <a href="{{ route('jurnal_laboratorium.create') }}" class="btn btn-primary">Tambah Data</a>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($jumlahLaboratorium as $item)
+            @foreach ($jurnalLaboratorium as $item)
             <tr>
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->hari }}</td>
@@ -26,8 +26,8 @@
                 <td>{{ $item->kelas }}</td>
                 <td>{{ $item->guru }}</td>
                 <td>
-                    <a href="{{ route('jumlah_laboratorium.edit', $item->id) }}" class="btn btn-warning">Edit</a>
-                    <form action="{{ route('jumlah_laboratorium.destroy', $item->id) }}" method="POST" style="display:inline-block;">
+                    <a href="{{ route('jurnal_laboratorium.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('jurnal_laboratorium.destroy', $item->id) }}" method="POST" style="display:inline-block;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Hapus</button>

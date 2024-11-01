@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JumlahLaboratorium;
+use App\Models\JurnalLaboratorium;
 use Illuminate\Http\Request;
 
-class JumlahLaboratoriumController extends Controller
+class JurnalLaboratoriumController extends Controller
 {
     public function index()
     {
-        $jumlahLaboratorium = JumlahLaboratorium::all();
-        return view('jumlah_laboratorium.index', compact('jumlahLaboratorium'));
+        $jurnalLaboratorium = JurnalLaboratorium::all();
+        return view('jurnal_laboratorium.index', compact('jurnalLaboratorium'));
     }
 
     public function create()
     {
-        return view('jumlah_laboratorium.create');
+        return view('jurnal_laboratorium.create');
     }
 
     public function store(Request $request)
@@ -28,14 +28,14 @@ class JumlahLaboratoriumController extends Controller
             'guru' => 'required|string|max:100',
         ]);
 
-        JumlahLaboratorium::create($request->all());
-        return redirect()->route('jumlah_laboratorium.index')->with('success', 'Data berhasil ditambahkan.');
+        JurnalLaboratorium::create($request->all());
+        return redirect()->route('jurnal_laboratorium.index')->with('success', 'Data berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
-        $jumlahLaboratorium = JumlahLaboratorium::find($id);
-        return view('jumlah_laboratorium.edit', compact('jumlahLaboratorium'));
+        $jurnalLaboratorium = JurnalLaboratorium::find($id);
+        return view('jurnal_laboratorium.edit', compact('jurnalLaboratorium'));
     }
 
     public function update(Request $request, $id)
@@ -48,14 +48,14 @@ class JumlahLaboratoriumController extends Controller
             'guru' => 'required|string|max:100',
         ]);
 
-        $jumlahLaboratorium = JumlahLaboratorium::find($id);
-        $jumlahLaboratorium->update($request->all());
-        return redirect()->route('jumlah_laboratorium.index')->with('success', 'Data berhasil diperbarui.');
+        $jurnalLaboratorium = JurnalLaboratorium::find($id);
+        $jurnalLaboratorium->update($request->all());
+        return redirect()->route('jurnal_laboratorium.index')->with('success', 'Data berhasil diperbarui.');
     }
 
     public function destroy($id)
     {
-        JumlahLaboratorium::destroy($id);
-        return redirect()->route('jumlah_laboratorium.index')->with('success', 'Data berhasil dihapus.');
+        JurnalLaboratorium::destroy($id);
+        return redirect()->route('jurnal_laboratorium.index')->with('success', 'Data berhasil dihapus.');
     }
 }

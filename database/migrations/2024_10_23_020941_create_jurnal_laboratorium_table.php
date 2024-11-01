@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('jumlah_laboratorium', function (Blueprint $table) {
+    Schema::create('jurnal_laboratorium', function (Blueprint $table) {
         $table->id();
         $table->string('hari', 15);
         $table->date('tgl');
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jumlah_laboratorium');
+        Schema::dropIfExists('jurnal_laboratorium');
     }
 };

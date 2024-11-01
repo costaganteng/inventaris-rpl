@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Tambah Data Laboratorium</h1>
-    <form action="{{ route('jumlah_laboratorium.store') }}" method="POST">
+    <form action="{{ route('jurnal_laboratorium.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label>Hari</label>
@@ -26,7 +26,7 @@
             <input type="text" name="guru" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-success">Simpan</button>
-        <a href="{{ route('jumlah_laboratorium.index') }}" class="btn btn-secondary">Kembali</a>
+        <a href="{{ route('jurnal_laboratorium.index') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
 @endsection
