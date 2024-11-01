@@ -7,7 +7,7 @@ use App\Http\Controllers\InventarisController;
 use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\KerusakanAlatController;
-use App\Http\Controllers\JumlahLaboratoriumController;
+use App\Http\Controllers\JurnalLaboratoriumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +30,4 @@ Route::resource('perbaikan', PerbaikanController::class);
 Route::resource('kerusakan_alat', KerusakanAlatController::class);
 Route::resource('pengembalian', PengembalianController::class);
 Route::resource('stok_bahan', StokBahanController::class);
-Route::resource('jumlah_laboratorium', JumlahLaboratoriumController::class);
+Route::resource('jurnal_laboratorium', JurnalLaboratoriumController::class);
