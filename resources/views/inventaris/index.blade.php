@@ -9,7 +9,7 @@
             <tr>
                 <th>No</th>
                 <th>Nama Alat</th>
-                <th>No Inventaris</th>
+                <th>No.Inventaris</th>
                 <th>Spesifikasi</th>
                 <th>Jumlah</th>
                 <th>Kondisi</th>
