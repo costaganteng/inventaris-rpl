@@ -7,5 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class JurnalLaboratorium extends Model
 {
-    protected $table = 'jurnal_laboratorium'; // Pastikan nama tabel sesuai
+    use HasFactory;
+
+    protected $table = 'jurnal_laboratorium'; // Nama tabel
+
+    // Kolom yang boleh diisi secara mass assignment
+    protected $fillable = [
+        'hari',
+        'tgl',
+        'mapel',
+        'kelas',
+        'materi_kegiatan',
+        'kejadian',
+        'guru',
+        'paraf'
+    ];
 }
